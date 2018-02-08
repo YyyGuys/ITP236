@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERD", "ERD\ERD.csproj", "{437F140F-2FAE-41A2-9BBE-A416FA8BCFBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErdTest", "ErdTest\ErdTest.csproj", "{50602ED4-7AD7-4667-B4A2-170EBD31D676}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITP244-MVC", "ITP244-MVC\ITP244-MVC.csproj", "{C86548B9-0588-449C-8E63-4B6D1CEC72DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITP244-Ef", "ITP244-Ef\ITP244-Ef.csproj", "{75809C96-ADD2-45F9-B700-755CB59FBA2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{EB42BAA2-B430-4883-AF5E-3079F07BED61}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C923BF7A-F047-4B2E-8E65-D26CADD72268}"
+	ProjectSection(SolutionItems) = preProject
+		E:\Rubric.xml = E:\Rubric.xml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{437F140F-2FAE-41A2-9BBE-A416FA8BCFBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{437F140F-2FAE-41A2-9BBE-A416FA8BCFBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{437F140F-2FAE-41A2-9BBE-A416FA8BCFBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{437F140F-2FAE-41A2-9BBE-A416FA8BCFBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50602ED4-7AD7-4667-B4A2-170EBD31D676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50602ED4-7AD7-4667-B4A2-170EBD31D676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50602ED4-7AD7-4667-B4A2-170EBD31D676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50602ED4-7AD7-4667-B4A2-170EBD31D676}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C86548B9-0588-449C-8E63-4B6D1CEC72DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C86548B9-0588-449C-8E63-4B6D1CEC72DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C86548B9-0588-449C-8E63-4B6D1CEC72DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C86548B9-0588-449C-8E63-4B6D1CEC72DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75809C96-ADD2-45F9-B700-755CB59FBA2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75809C96-ADD2-45F9-B700-755CB59FBA2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75809C96-ADD2-45F9-B700-755CB59FBA2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75809C96-ADD2-45F9-B700-755CB59FBA2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

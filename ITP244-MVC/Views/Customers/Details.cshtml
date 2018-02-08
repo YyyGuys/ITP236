@@ -1,0 +1,77 @@
+﻿@model ITP244_Ef.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+    </dl>
+
+    <table class="table table-striped">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.SalesOrders.First().SalesOrderNumber)</th>
+            <th>@Html.DisplayNameFor(model => model.SalesOrders.First().OrderDate)</th>
+            <th>@Html.DisplayNameFor(model => model.SalesOrders.First().OrderTotal)</th>
+        </tr>
+        @foreach (var item in Model.SalesOrders)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalesOrderNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderTotal)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "SalesOrders", new {id = item.SalesOrderNumber}, null) |
+                    @Html.ActionLink("Details", "Details", "SalesOrders", new {id = item.SalesOrderNumber}, null) |
+                    @*@Html.ActionLink("Delete", "Delete", new {id = item.SalesOrderNumber})*@
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

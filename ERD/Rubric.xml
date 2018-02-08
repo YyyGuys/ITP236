@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Rubric>
+  <Project ID="1" Name="Fund Raising">
+    <BaseEntities>
+      <Entity Name="Member">
+        <Columns>
+          <Column Name="MemberId|MemberNumber" DataType="int|uniqueidentifier" IsNullable="0" />
+          <Column Name="FirstName" DataType="varchar" IsNullable="0" />
+          <Column Name="LastName" DataType="varchar" IsNullable="0"  />
+          <Invalid>
+            <Name>Event|Inv|Guest|RSV|Meal</Name>
+          </Invalid>
+        </Columns>
+        <Constraints>
+          <PK>
+            <Column Name="MemberId|MemberNumber"/>
+          </PK>
+        </Constraints>
+      </Entity>
+      <Entity Name="Meal">
+        <Columns>
+          <Column Name="MealId" DataType="int|uniqueidentifier" IsNullable="0" />
+          <Column Name="Name" DataType="varchar" IsNullable="0" />
+          <Column Name="Price" DataType="money" IsNullable="1"  />
+          <Invalid>
+            <Name>Event}Inv|Enter|Member</Name>
+          </Invalid>
+        </Columns>
+        <Constraints>
+          <PK>
+            <Column Name="MealId"/>
+          </PK>
+        </Constraints>
+      </Entity>
+      <Entity Name="FundRaisingEvent">
+        <Columns>
+          <Column Name="FundRaisingEventId|EventId" DataType="int|uniqueidentifier" IsNullable="0" />
+          <Column Name="Name" DataType="varchar" IsNullable="0" />
+          <Column Name="EvenDate" DataType="date" IsNullable="0" />
+          <Column Name="Contribution" DataType="money" IsNullable="1" />
+          <Column Name="MealId" DataType="int|uniqueidentifier" IsNullable="1" />
+          <Invalid>
+            <Name IsWhole="1">Meal</Name>
+            <Name>Inv|Enter|Member|Guest|RSV</Name>
+          </Invalid>
+        </Columns>
+        <Constraints>
+          <PK>
+            <Column Name="FundRaisingEventId|EventId"/>
+          </PK>
+          <ForeignKeys>
+            <FK>
+              <Table>Meal</Table>
+              <Column>MealId</Column>
+            </FK>
+          </ForeignKeys>
+        </Constraints>
+      </Entity>
+      <Entity Name="Invitation">
+        <Columns>
+          <Column Name="FundRaisingEventId|EventId" DataType="int|uniqueidentifier" IsNullable="0" />
+          <Column Name="MemberId|MemberNumber" DataType="int|uniqueidentifier" IsNullable="0" />
+          <Column Name="RSVP" DataType="bit" IsNullable="1" />
+          <Column Name="Guests" DataType="int" IsNullable="1"  />
+          <Column Name="ResponseDate" DataType="date" IsNullable="1" />
+          <Invalid>
+            <Name>Meal|Ent|EventDate</Name>
+          </Invalid>
+        </Columns>
+        <Constraints>
+          <PK>
+            <Column Name="FundRaisingEventId|EventId"/>
+            <Column Name="MemberId|MemberNumber"/>
+          </PK>
+          <PK>
+            <Column Name="Invitation" />
+            <Index IsUnique="1">
+              <Column Name="FundRaisingEventId|EventId"/>
+              <Column Name="MemberId|MemberNumber"/>
+            </Index>
+          </PK>
+          <ForeignKeys>
+            <FK>
+              <Table>FundRaisingEvent</Table>
+              <Column>FundRaisingEventId|EventId</Column>
+            </FK>
+            <FK>
+              <Table>Member</Table>
+              <Column>MemberId|MemberNumber</Column>
+            </FK>
+          </ForeignKeys>
+        </Constraints>
+      </Entity>
+    </BaseEntities>
+    <RelationshipEntities>
+      <Entity Name="Entertainment">
+        <Columns>
+          <Column Name="FundRaisingEventId" DataType="int|uniqueidentifier" IsNullable="0" />
+          <Column Name="EntertainerId" DataType="int|uniqueidentifier" IsNullable="0" />
+          <Column Name="Fee" DataType="money" IsNullable="1" />
+          <Invalid>
+            <Name>Meal|Member|Inv|Date</Name>
+          </Invalid>
+        </Columns>
+        <Constraints>
+          <PK>
+            <Column Name="FundRaisingEventId"/>
+            <Column Name="EntertainerId"/>
+          </PK>
+          <PK>
+            <Column Name="EntertainmentID" />
+            <Index IsUnique="1">
+              <Column Name="FundRaisingEventId"/>
+              <Column Name="EntertainerID"/>
+            </Index>
+          </PK>
+          <ForeignKeys>
+            <FK>
+              <Table>Entertainer</Table>
+              <Column>EntertainerId</Column>
+            </FK>
+            <FK>
+              <Table>FundRaisingEvent</Table>
+              <Column>FundRaisingEventId</Column>
+            </FK>
+          </ForeignKeys>
+        </Constraints>
+      </Entity>
+    </RelationshipEntities>
+  </Project>
+</Rubric>
