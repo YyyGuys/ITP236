@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Media;
+using System.Security.Permissions;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using ERD;
+using System.Windows.Forms;
 
 namespace ErdTest
 {
@@ -29,6 +34,12 @@ namespace ErdTest
                 }
             }
             var xml = ErModel.GenerateERD(sql.ToString());
+            var xmlCode = xml.ToString();
+            System.Threading.Thread thread = new Thread(() => Clipboard.SetText(xmlCode));
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+            thread.Join();
+            
 
             var erd = new ErModel(sql.ToString());
             var rubric = new Rubric("XML\\Rubric.xml");
